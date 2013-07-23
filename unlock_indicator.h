@@ -21,4 +21,7 @@ void redraw_screen(void);
 void start_clear_indicator_timeout(void);
 void stop_clear_indicator_timeout(void);
 
+/* The texts for verifying and wrong */
+#define TEXT_MAX_SIZE 16
+
 #endif

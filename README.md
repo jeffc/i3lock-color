@@ -3,7 +3,7 @@ i3lock-color
 
 *making i3lock's typing indicator color scheme configurable*
 
-I added the following command line options:
+eBrnd added the following command line options:
 * `--insidevercolor=rrggbbaa` -- Inside of the circle while the password is being verified
 * `--insidewrongcolor=rrggbbaa` -- Inside of the circle when a wrong password was entered
 * `--insidecolor=rrggbbaa` -- Inside of the circle while typing/idle
@@ -14,6 +14,12 @@ I added the following command line options:
 * `--textcolor=rrggbbaa` -- Text ("verifying", "wrong!")
 * `--keyhlcolor=rrggbbaa` -- Keypress highlight segments
 * `--bshlcolor=rrggbbaa` -- Backspace highlight segments
+
+I added a few more:
+* `--wrong-text="wrong!"` -- Change the text that shows when you enter an incorrect password
+* `--verifying-text="verifying..."` -- Change the text that shows while PAM checks your password
+
+The software will clip your texts after 15 characters, but only 9 comfortably fit on the keypress-indicator circle.
 
 All the colors have an alpha channel now. Please keep in mind that this was not intended when the program was originally written, so making thing transparent that weren't before can make it look strange.
 

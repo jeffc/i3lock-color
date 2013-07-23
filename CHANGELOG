@@ -1,3 +1,9 @@
+2013-07-22 (text modification)
+
+ • Forked from i3lock-color (https://github.com/eBrnd/i3lock-color) by Jeff Cooper
+ • Added custom "wrong!" and "verifying..." text options
+
+
 2012-04-01 i3lock 2.4
 
  • Bugfix: Fix background color when using cairo (Thanks Pascal)

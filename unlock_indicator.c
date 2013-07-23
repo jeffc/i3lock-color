@@ -68,6 +68,8 @@ extern char textcolor[9];
 extern char keyhlcolor[9];
 extern char bshlcolor[9];
 
+extern char wrong_text[TEXT_MAX_SIZE];
+extern char verifying_text[TEXT_MAX_SIZE];
 /*******************************************************************************
  * Local variables.
  ******************************************************************************/
@@ -268,10 +270,10 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
         char *text = NULL;
         switch (pam_state) {
             case STATE_PAM_VERIFY:
-                text = "verifying…";
+                text = verifying_text;
                 break;
             case STATE_PAM_WRONG:
-                text = "wrong!";
+                text = wrong_text;
                 break;
             default:
                 break;

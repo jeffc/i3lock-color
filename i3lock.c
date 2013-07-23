@@ -53,6 +53,10 @@ char textcolor[9] = "000000ff";
 char keyhlcolor[9] = "33db00ff";
 char bshlcolor[9] = "db3300ff";
 
+/* default texts for "wrong" and "verifying" */
+char wrong_text[TEXT_MAX_SIZE] = "wrong!";
+char verifying_text[TEXT_MAX_SIZE] = "verifying…";
+
 uint32_t last_resolution[2];
 xcb_window_t win;
 static xcb_cursor_t cursor;
@@ -579,6 +583,8 @@ int main(int argc, char *argv[]) {
         {"debug", no_argument, NULL, 0},
         {"help", no_argument, NULL, 'h'},
         {"no-unlock-indicator", no_argument, NULL, 'u'},
+        {"wrong-text", required_argument, NULL, 0},
+        {"verifying-text", required_argument, NULL, 0},
 #ifndef NOLIBCAIRO
         {"image", required_argument, NULL, 'i'},
         {"tiling", no_argument, NULL, 't'},
@@ -654,6 +660,16 @@ int main(int argc, char *argv[]) {
         case 0:
             if (strcmp(longopts[optind].name, "debug") == 0)
                 debug_mode = true;
+            else if (strcmp(longopts[optind].name, "wrong-text") == 0) {
+                char *arg = optarg;
+
+                strncpy(wrong_text, arg, TEXT_MAX_SIZE - 1);
+            }
+            else if (strcmp(longopts[optind].name, "verifying-text") == 0) {
+                char *arg = optarg;
+
+                strncpy(verifying_text, arg, TEXT_MAX_SIZE - 1);
+            }
 #ifndef NOLIBCAIRO
             else if (strcmp(longopts[optind].name, "insidevercolor") == 0) {
                 char *arg = optarg;
